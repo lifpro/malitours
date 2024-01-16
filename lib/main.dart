@@ -35,14 +35,23 @@ class MaliTours extends StatelessWidget {
                 child: Container(
                   height: 150,
                   color: Colors.green,
-                  child: Center(
-                    child: Text(
-                      'Bamako',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Image.asset(
+                        'assets/images/bamako.jpeg',
+                        fit: BoxFit.fill,
                       ),
-                    ),
+                      const Center(
+                        child: Text(
+                          'Bamako',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -50,15 +59,50 @@ class MaliTours extends StatelessWidget {
                 elevation: 5,
                 child: Container(
                   height: 150,
-                  color: Colors.yellow,
-                  child: Text('Kayes'),
+                  color: Colors.green,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Image.asset(
+                        'assets/images/kayes.jpeg',
+                        fit: BoxFit.fill,
+                      ),
+                      const Center(
+                        child: Text(
+                          'Kayes',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Card(
+                elevation: 5,
                 child: Container(
                   height: 150,
-                  color: Colors.red,
-                  child: Text('Mopti'),
+                  color: Colors.green,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Image.asset(
+                        'assets/images/mopti.jpeg',
+                        fit: BoxFit.fill,
+                      ),
+                      const Center(
+                        child: Text(
+                          'Mopti',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
