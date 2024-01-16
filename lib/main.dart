@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MaliTours());
@@ -18,16 +17,52 @@ class MaliTours extends StatelessWidget {
         ),
         home: Scaffold(
           appBar: AppBar(
-            leading: const Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-              child: FaIcon(FontAwesomeIcons.layerGroup),
-            ),
+            // leading: const Padding(
+            //   padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+            //   child: FaIcon(FontAwesomeIcons.layerGroup),
+            // ),
             title: const Text('Mali Tours'),
             actions: const [
               Icon(Icons.more_vert),
             ],
           ),
-          body: const Center(child: Text('Salut')),
+          drawer: Container(),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Card(
+                elevation: 5,
+                child: Container(
+                  height: 150,
+                  color: Colors.green,
+                  child: Center(
+                    child: Text(
+                      'Bamako',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: Container(
+                  height: 150,
+                  color: Colors.yellow,
+                  child: Text('Kayes'),
+                ),
+              ),
+              Card(
+                child: Container(
+                  height: 150,
+                  color: Colors.red,
+                  child: Text('Mopti'),
+                ),
+              ),
+            ],
+          ),
         ) //const MyHomePage(title: 'Flutter Demo Home Page'),
         );
   }
