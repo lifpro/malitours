@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:malitours/view/home/home_view.dart';
+import 'package:malitours/view/site/site_view.dart';
 
 void main() {
   runApp(const MaliTours());
@@ -11,12 +11,12 @@ class MaliTours extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Mali Tours',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-      ),
-      home: HomeView(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Mali Tours',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        ),
+        home: SiteView() //HomeView(),
+        );
   }
 }

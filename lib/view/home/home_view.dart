@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:malitours/view/home/widgets/home_card.dart';
+import 'package:malitours/widgets/app_bar_title.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -30,12 +31,8 @@ class _HomeViewState extends State<HomeView> {
         //   padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
         //   child: FaIcon(FontAwesomeIcons.layerGroup),
         // ),
-        title: InkWell(
-          highlightColor: Colors.red,
-          splashColor: Colors.green,
-          radius: 50,
-          child: const Text('Mali Tours'),
-          onTap: () => print('Salut'),
+        title: AppBarTitle(
+          title: 'Mali Tours',
         ),
         actions: const [
           Icon(Icons.more_vert),
