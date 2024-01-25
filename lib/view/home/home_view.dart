@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:malitours/view/home/widgets/home_card.dart';
 import 'package:malitours/widgets/app_bar_title.dart';
 
@@ -10,6 +11,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  DateTime? mydate = DateTime.now();
   List villes = [
     {'name': 'Bamako', 'image': 'assets/images/bamako.jpeg', 'checked': false},
     {'name': 'Kayes', 'image': 'assets/images/kayes.jpeg', 'checked': true},
@@ -21,6 +23,15 @@ class _HomeViewState extends State<HomeView> {
 
       villes[index]['checked'] = !villes[index]['checked'];
     });
+  }
+
+  setDate() {
+    showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime.now(),
+            lastDate: DateTime.now().add(const Duration(days: 50)))
+        .then((value) => {setState(() => mydate = value)});
   }
 
   @override
@@ -42,6 +53,17 @@ class _HomeViewState extends State<HomeView> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Container(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            height: 100,
+            child: Row(children: [
+              Expanded(child: Text(DateFormat("EEEE DD yyyy").format(mydate!))),
+              ElevatedButton(
+                child: const Text('Select Date'),
+                onPressed: () => setDate(),
+              ),
+            ]),
+          ),
           for (var v in villes)
             HomeCard(
               name: v['name'],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:malitours/view/site/site_view.dart';
+
+import 'view/home/home_view.dart';
 
 void main() {
   runApp(const MaliTours());
@@ -16,7 +17,7 @@ class MaliTours extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         ),
-        home: SiteView() //HomeView(),
+        home: HomeView() //HomeView(),
         );
   }
 }
