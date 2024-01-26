@@ -3,6 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:malitours/view/home/widgets/home_card.dart';
 import 'package:malitours/widgets/app_bar_title.dart';
 
+import '../../models/tests_arguments.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -70,6 +72,12 @@ class _HomeViewState extends State<HomeView> {
               image: v['image'],
               checked: v['checked'],
               toggleFavorie: () => checkFavori(v),
+              viewSite: () => {
+                Navigator.pushNamed(context, '/site',
+                    arguments: TestsArguments(param1: v['name']))
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => SiteView()))
+              },
             )
         ],
         // children: villes

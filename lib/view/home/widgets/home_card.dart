@@ -5,12 +5,14 @@ class HomeCard extends StatelessWidget {
   final String image;
   final bool checked;
   final Function() toggleFavorie;
+  final Function() viewSite;
   const HomeCard(
       {super.key,
       required this.name,
       required this.image,
       required this.checked,
-      required this.toggleFavorie});
+      required this.toggleFavorie,
+      required this.viewSite});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,8 @@ class HomeCard extends StatelessWidget {
               ),
               fit: BoxFit.cover,
               child: InkWell(
-                onTap: toggleFavorie,
+                onLongPress: toggleFavorie,
+                onTap: viewSite,
               ),
             ),
             Center(

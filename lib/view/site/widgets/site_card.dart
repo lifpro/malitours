@@ -3,15 +3,17 @@ import 'package:malitours/models/site_model.dart';
 
 class SiteCard extends StatelessWidget {
   final SiteModel site;
-
+  final Function() viewDetail;
   const SiteCard({
     super.key,
     required this.site,
+    required this.viewDetail,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: viewDetail,
       leading: CircleAvatar(
         backgroundImage: AssetImage(
           site.image,
